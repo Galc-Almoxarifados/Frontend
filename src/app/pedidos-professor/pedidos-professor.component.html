@@ -1,0 +1,33 @@
+<h2>Fazer Pedido de Item de Almoxarifado</h2>
+
+<div class="pedido-item" *ngFor="let item of itensPedido; let i = index">
+  <div class="campo">
+    <label for="nomeItem{{i}}">Nome do Item:</label>
+    <input type="text" id="nomeItem{{i}}" [(ngModel)]="itensPedido[i].nome" name="nomeItem{{i}}" required>
+  </div>
+
+  <div class="campo">
+    <label for="quantidade{{i}}">Quantidade:</label>
+    <input type="number" id="quantidade{{i}}" [(ngModel)]="itensPedido[i].quantidade" name="quantidade{{i}}" required>
+  </div>
+
+  <div class="campo">
+    <label for="dataEntrega{{i}}">Data de Entrega:</label>
+    <input type="date" id="dataEntrega{{i}}" [(ngModel)]="itensPedido[i].dataEntrega" name="dataEntrega{{i}}" required>
+  </div>
+
+  <div class="campo">
+    <label for="dataDevolucao{{i}}">Data de Devolução:</label>
+    <input type="date" id="dataDevolucao{{i}}" [(ngModel)]="itensPedido[i].dataDevolucao" name="dataDevolucao{{i}}" required>
+  </div>
+
+  <button class="remover-item" (click)="removerItem(i)">Remover Item</button>
+</div>
+
+<button class="adicionar-item" (click)="adicionarItem()">Adicionar Item</button>
+
+<button class="enviar-pedido" (click)="submitPedido()">Enviar Pedido</button>
+
+<div *ngIf="pedidoEnviado" class="mensagem">
+  Pedido enviado com sucesso!
+</div>

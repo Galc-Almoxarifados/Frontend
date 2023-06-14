@@ -1,0 +1,38 @@
+/* .home .title{
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: black;
+
+}
+
+.home .subtitle {
+    font-size: 1.1rem;
+} */
+
+.slogan-container {
+  text-align: center;
+  background-color: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: gray;
+}
+
+.slogan-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.slogan-text {
+  font-size: 18px;
+
+}
+
+.logo {
+  width: 200px;
+}

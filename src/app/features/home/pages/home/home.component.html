@@ -1,0 +1,22 @@
+<div class="home__wrapper">
+  <mat-sidenav-container class="home__sdc" [ngStyle]="{ height: '100%' }">
+    <mat-sidenav mode="side" opened #leftSidenav>
+      <app-navbar></app-navbar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="home__header">
+        <app-header></app-header>
+      </div>
+      <div class="home__container">
+        <!-- <mat-card class="home mat-elevation-z3">
+          <mat-card-title class="title"> Bem Vindo </mat-card-title>
+          <mat-card-subtitle class="subtitle">
+            Sistema para controlar almoxarifado
+          </mat-card-subtitle>
+        </mat-card> -->
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,95 @@
+<h1>Estoque</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Produto</th>
+      <th>Quantidade</th>
+      <th>Unidade</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produto of produtos">
+      <td>{{ produto.nome }}</td>
+      <td>{{ produto.quantidade }}</td>
+      <td>{{ produto.unidade }}</td>
+      <td>
+        <button (click)="editarProduto(produto)">
+          <i class="material-icons"> edit </i>
+        </button>
+        <button (click)="removerProduto(produto)">
+          <i class="material-icons"> delete </i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="edit-form" *ngIf="modoEdicao">
+  <h2>Editar Produto</h2>
+  <form (ngSubmit)="atualizarProduto()" #produtoForm="ngForm">
+    <label for="nome">Nome:</label>
+    <input
+      id="nome"
+      type="text"
+      [(ngModel)]="produtoEditado.nome"
+      name="nome"
+      required
+    />
+
+    <label for="quantidade">Quantidade:</label>
+    <input
+      id="quantidade"
+      type="number"
+      [(ngModel)]="produtoEditado.quantidade"
+      name="quantidade"
+      required
+    />
+
+    <label for="unidade">Unidade:</label>
+    <input
+      id="unidade"
+      type="text"
+      [(ngModel)]="produtoEditado.unidade"
+      name="unidade"
+      required
+    />
+
+    <button type="submit">Atualizar</button>
+    <button type="button" (click)="cancelarEdicao()">Cancelar</button>
+  </form>
+</div>
+
+<div class="add-form">
+  <h2>Adicionar Produto</h2>
+  <form (ngSubmit)="adicionarProduto()" #produtoForm="ngForm">
+    <label for="nome">Nome:</label>
+    <input
+      id="nome"
+      type="text"
+      [(ngModel)]="novoProduto.nome"
+      name="nome"
+      required
+    />
+
+    <label for="quantidade">Quantidade:</label>
+    <input
+      id="quantidade"
+      type="number"
+      [(ngModel)]="novoProduto.quantidade"
+      name="quantidade"
+      required
+    />
+
+    <label for="unidade">Unidade:</label>
+    <input
+      id="unidade"
+      type="text"
+      [(ngModel)]="novoProduto.unidade"
+      name="unidade"
+      required
+    />
+
+    <button type="submit">Adicionar</button>
+  </form>
+</div>

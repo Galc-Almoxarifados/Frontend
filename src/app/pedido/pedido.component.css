@@ -1,0 +1,80 @@
+h1 {
+  text-align: center;
+}
+
+.pedido-info {
+  margin-bottom: 20px;
+}
+
+.pedido-info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.itens-pedido {
+  margin-bottom: 20px;
+}
+
+.itens-pedido h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.recebimento-form {
+  margin-bottom: 20px;
+}
+
+.recebimento-form h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}

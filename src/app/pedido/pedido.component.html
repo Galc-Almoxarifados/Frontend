@@ -1,0 +1,59 @@
+<!-- <h1>Formulário de Pedido</h1>
+
+<form (ngSubmit)="submitPedido()">
+  <div>
+    <label for="professor">Professor:</label>
+    <input type="text" id="professor" [(ngModel)]="pedido.professor" name="professor" required>
+  </div>
+
+  <div>
+    <label for="materiais">Materiais:</label>
+    <textarea id="materiais" [(ngModel)]="pedido.materiais" name="materiais" required></textarea>
+  </div>
+
+  <button type="submit">Enviar Pedido</button>
+</form> -->
+
+<h1>Recebimento de Pedido</h1>
+
+<div class="pedido-info">
+  <h2>Informações do Pedido</h2>
+  <p>Professor: {{ pedido.cliente }}</p>
+  <p>Data: {{ pedido.data | date }}</p>
+  <p>Quantidade: {{ pedido.quantidade }}</p>
+</div>
+
+<div class="itens-pedido">
+  <h2>Itens do Pedido</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of pedido.itens">
+        <td>{{ item.produto }}</td>
+        <td>{{ item.quantidade }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="recebimento-form">
+  <h2>Formulário de Recebimento</h2>
+  <form (ngSubmit)="receberPedido()" #recebimentoForm="ngForm">
+    <div class="form-group">
+      <label for="quantidadeRecebida">Quantidade Recebida:</label>
+      <input id="quantidadeRecebida" type="number" [(ngModel)]="quantidadeRecebida" name="quantidadeRecebida" required>
+    </div>
+    <div class="form-group">
+      <label for="observacoes">Observações:</label>
+      <textarea id="observacoes" [(ngModel)]="observacoes" name="observacoes"></textarea>
+    </div>
+    <button type="submit">Receber Pedido</button>
+  </form>
+</div>

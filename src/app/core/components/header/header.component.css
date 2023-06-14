@@ -1,0 +1,56 @@
+.header{
+  display: flex;
+  align-items: center;
+  background-color: #1D3340;
+
+}
+.header a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+.header .logo{
+max-height: 50px;
+}
+.header .title-group{
+  padding-left: 30px;
+  color: #fff;
+}
+.header .title-group i{
+  padding-right: 5px;
+}
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+input[type="text"] {
+  width: 200px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  border: 2px solid #FFF;
+
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+

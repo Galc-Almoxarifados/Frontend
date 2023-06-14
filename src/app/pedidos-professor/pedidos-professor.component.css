@@ -1,0 +1,128 @@
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.pedido-item {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.campo {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.remover-item {
+  padding: 5px 10px;
+  background-color: #ff4f4f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remover-item:hover {
+  background-color: #d63b3b;
+}
+
+.adicionar-item,
+.enviar-pedido {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.adicionar-item:hover,
+.enviar-pedido:hover {
+  background-color: #45a049;
+}
+
+.enviar-pedido {
+  margin-top: 20px;
+}
+.mensagem {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 20px;
+  text-align: center;
+}
+/* Estilização do formulário */
+.form-pedido {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-pedido h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-pedido .campo {
+  margin-bottom: 20px;
+}
+
+.form-pedido label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-pedido input[type="text"],
+.form-pedido input[type="number"],
+.form-pedido input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-pedido button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-pedido .remover-item {
+  background-color: #f44336;
+}
+
+/* Estilização da mensagem de pedido enviado */
+.mensagem {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 5px;
+}

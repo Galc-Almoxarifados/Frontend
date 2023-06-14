@@ -1,0 +1,26 @@
+
+.sidenav {
+  background-color: #2c4859;
+  width: 200px;
+  color: #fff;
+  height: 100%;
+}
+.sidenav a {
+  color: white;
+}
+
+.sidenav i {
+  padding-right: 5px;
+  color: white;
+}
+.content{
+  padding: 16px;
+  background-color: #fff;
+}
+.nav-list a{
+  color: #fff;
+}
+.container{
+  color: #fff;
+}
+
