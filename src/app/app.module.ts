@@ -19,6 +19,7 @@ import { ManutencaoComponent } from './manutencao/manutencao.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { ItensComponent } from './itens/itens.component';
 import { PedidosProfessorComponent } from './pedidos-professor/pedidos-professor.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 // import { ItensReadComponent } from './components/itens/itens-read/itens-read.component';
@@ -45,6 +46,7 @@ import { PedidosProfessorComponent } from './pedidos-professor/pedidos-professor
     MatButtonModule,
     RouterModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

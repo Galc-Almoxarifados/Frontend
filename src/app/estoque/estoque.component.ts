@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-estoque',
@@ -14,13 +15,22 @@ export class EstoqueComponent {
 
   modoEdicao: boolean = false;
   produtoEditado: any = {};
-
+  apiUrl = "/api"
   novoProduto: any = {};
+
+  constructor(private httpClient: HttpClient) {
+  }
 
   adicionarProduto() {
     const novoId = this.produtos.length > 0 ? this.produtos[this.produtos.length - 1].id + 1 : 1;
     this.produtos.push({ id: novoId, ...this.novoProduto });
     this.novoProduto = {};
+    this.httpClient.post(this.apiUrl + '/Itens/RegistrarItem' , this.novoProduto).subscribe({
+      next: (response) =>{
+        console.log(response);
+      }
+    })
+
   }
 
 
