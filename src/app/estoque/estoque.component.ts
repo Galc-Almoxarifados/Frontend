@@ -1,50 +1,64 @@
+import { EstoqueService } from './estoque.service';
 import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import{Item} from "./item"
+
+
 
 @Component({
   selector: 'app-estoque',
   templateUrl: './estoque.component.html',
   styleUrls: ['./estoque.component.css']
 })
+
 export class EstoqueComponent {
-  produtos: any[] = [
-    { id: 1, nome: 'Arduino', quantidade: 10, unidade: 'un' },
-    { id: 2, nome: 'Produto 2', quantidade: 5, unidade: 'kg' },
-    { id: 3, nome: 'Produto 3', quantidade: 20, unidade: 'cx' }
-  ];
+  produtos: Item[] = [];
+
 
   modoEdicao: boolean = false;
-  produtoEditado: any = {};
-  apiUrl = "/api"
-  novoProduto: any = {};
+  produtoEditado: Item = {};
+  novoProduto: Item = {};
+  apiUrl = "/api/Itens"
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private estoqueService: EstoqueService) {
+    this.listarProduto()
   }
 
+
   adicionarProduto() {
-    const novoId = this.produtos.length > 0 ? this.produtos[this.produtos.length - 1].id + 1 : 1;
-    this.produtos.push({ id: novoId, ...this.novoProduto });
-    this.novoProduto = {};
-    this.httpClient.post(this.apiUrl + '/Itens/RegistrarItem' , this.novoProduto).subscribe({
+   this.estoqueService.save(this.novoProduto).subscribe({
       next: (response) =>{
-        console.log(response);
+             this.listarProduto()
+        this.novoProduto = {};
       }
     })
 
   }
 
+  listarProduto(){
+    this.estoqueService.getAll().subscribe({
+      next: (response) =>{
+        this.produtos = []
+        response.forEach(element => {
+        this.produtos.push(element);
+        });
+      }
+    })
+  }
 
-  editarProduto(produto: any) {
+
+  editarProduto(produto: Item) {
     this.modoEdicao = true;
     this.produtoEditado = { ...produto };
   }
 
   atualizarProduto() {
-    const index = this.produtos.findIndex(p => p.id === this.produtoEditado.id);
-    if (index !== -1) {
-      this.produtos[index] = { ...this.produtoEditado };
-      this.cancelarEdicao();
-    }
+     this.estoqueService.update(this.produtoEditado).subscribe({
+      next: (response) =>{
+             this.listarProduto()
+        this.produtoEditado = {};
+      }
+    })
   }
 
   cancelarEdicao() {
@@ -52,10 +66,15 @@ export class EstoqueComponent {
     this.produtoEditado = {};
   }
 
-  removerProduto(produto: any) {
-    const index = this.produtos.findIndex(p => p.id === produto.id);
-    if (index !== -1) {
-      this.produtos.splice(index, 1);
-    }
+  removerProduto(produto: Item) {
+    let id=produto.idITem
+    this.estoqueService.delete(id).subscribe({
+      next: (response) =>{
+        this.listarProduto()
+      },
+      error:(erro) => {
+
+      }
+    })
   }
 }

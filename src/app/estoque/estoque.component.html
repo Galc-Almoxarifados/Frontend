@@ -4,15 +4,19 @@
     <tr>
       <th>Produto</th>
       <th>Quantidade</th>
-      <th>Unidade</th>
+      <th>Almoxarife</th>
+      <th>Status</th>
+      <th>tipo do Itens</th>
       <th>Ações</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let produto of produtos">
       <td>{{ produto.nome }}</td>
-      <td>{{ produto.quantidade }}</td>
-      <td>{{ produto.unidade }}</td>
+      <td>{{ produto.qtItens }}</td>
+      <td>{{produto.idAlmoxarife}}</td>
+      <td>{{produto.idStatusItem}}</td>
+      <td>{{produto.idTipodeItem}}</td>
       <td>
         <button (click)="editarProduto(produto)">
           <i class="material-icons"> edit </i>
@@ -28,6 +32,9 @@
 <div class="edit-form" *ngIf="modoEdicao">
   <h2>Editar Produto</h2>
   <form (ngSubmit)="atualizarProduto()" #produtoForm="ngForm">
+
+    
+
     <label for="nome">Nome:</label>
     <input
       id="nome"
@@ -41,19 +48,39 @@
     <input
       id="quantidade"
       type="number"
-      [(ngModel)]="produtoEditado.quantidade"
+      [(ngModel)]="produtoEditado.qtItens"
       name="quantidade"
       required
     />
 
-    <label for="unidade">Unidade:</label>
+    <label for="almoxarife">Almoxarife:</label>
     <input
-      id="unidade"
+      id="almoxarife"
       type="text"
-      [(ngModel)]="produtoEditado.unidade"
-      name="unidade"
+      [(ngModel)]="produtoEditado.idAlmoxarife"
+      name="almoxarife"
       required
     />
+
+    <label for="status">Status:</label>
+    <input
+      id="status"
+      type="text"
+      [(ngModel)]="produtoEditado.idStatusItem"
+      name="status"
+      required
+    />
+
+    <label for="tipoItem">Tipo do Item:</label>
+    <input
+      id="tipoItem"
+      type="text"
+      [(ngModel)]="produtoEditado.idTipodeItem"
+      name="tipoItem"
+      required
+    />
+
+
 
     <button type="submit">Atualizar</button>
     <button type="button" (click)="cancelarEdicao()">Cancelar</button>
@@ -76,19 +103,40 @@
     <input
       id="quantidade"
       type="number"
-      [(ngModel)]="novoProduto.quantidade"
+      [(ngModel)]="novoProduto.qtItens"
       name="quantidade"
       required
     />
 
-    <label for="unidade">Unidade:</label>
+
+
+    <label for="almoxarife">Almoxarife:</label>
     <input
-      id="unidade"
-      type="text"
-      [(ngModel)]="novoProduto.unidade"
-      name="unidade"
+      id="almoxarife"
+      type="number"
+      [(ngModel)]="novoProduto.idAlmoxarife"
+      name="almoxarife"
       required
     />
+
+    <label for="status">Status:</label>
+    <input
+      id="status"
+      type="number"
+      [(ngModel)]="novoProduto.idStatusItem"
+      name="status"
+      required
+    />
+
+    <label for="tipoItem">Tipo do Item:</label>
+    <input
+      id="tipoItem"
+      type="number"
+      [(ngModel)]="novoProduto.idTipodeItem"
+      name="tipoItem"
+      required
+    />
+
 
     <button type="submit">Adicionar</button>
   </form>
