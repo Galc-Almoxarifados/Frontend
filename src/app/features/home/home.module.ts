@@ -10,6 +10,8 @@ import { HomeComponent } from './pages/home/home.component';
 import {FormsModule} from '@angular/forms'
 
 
+
+
 @NgModule({
   declarations: [
     HomeComponent

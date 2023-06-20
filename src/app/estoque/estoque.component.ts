@@ -1,7 +1,6 @@
 import { EstoqueService } from './estoque.service';
 import { Component } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import{Item} from "./item"
+import { Item } from "./item"
 
 
 
@@ -26,21 +25,21 @@ export class EstoqueComponent {
 
 
   adicionarProduto() {
-   this.estoqueService.save(this.novoProduto).subscribe({
-      next: (response) =>{
-             this.listarProduto()
+    this.estoqueService.save(this.novoProduto).subscribe({
+      next: (response) => {
+        this.listarProduto()
         this.novoProduto = {};
       }
     })
 
   }
 
-  listarProduto(){
+  listarProduto() {
     this.estoqueService.getAll().subscribe({
-      next: (response) =>{
+      next: (response) => {
         this.produtos = []
         response.forEach(element => {
-        this.produtos.push(element);
+          this.produtos.push(element);
         });
       }
     })
@@ -53,9 +52,9 @@ export class EstoqueComponent {
   }
 
   atualizarProduto() {
-     this.estoqueService.update(this.produtoEditado).subscribe({
-      next: (response) =>{
-             this.listarProduto()
+    this.estoqueService.update(this.produtoEditado).subscribe({
+      next: (response) => {
+        this.listarProduto()
         this.produtoEditado = {};
       }
     })
@@ -67,12 +66,12 @@ export class EstoqueComponent {
   }
 
   removerProduto(produto: Item) {
-    let id=produto.idITem
+    let id = produto.idITem
     this.estoqueService.delete(id).subscribe({
-      next: (response) =>{
+      next: (response) => {
         this.listarProduto()
       },
-      error:(erro) => {
+      error: (erro) => {
 
       }
     })

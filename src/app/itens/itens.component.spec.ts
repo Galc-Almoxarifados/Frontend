@@ -1,6 +1,6 @@
+import { ItensComponent } from './itens.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItensComponent } from './itens.component';
 
 describe('ItensComponent', () => {
   let component: ItensComponent;
@@ -20,6 +20,4 @@ describe('ItensComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-
 });

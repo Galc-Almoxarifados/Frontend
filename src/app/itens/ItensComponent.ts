@@ -1,7 +1,7 @@
-
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ItensService } from './itens.service';
 import { Itens } from './itens';
+
 
 @Component({
   selector: 'app-itens',

@@ -13,12 +13,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { InicioComponent } from '../views/inicio/inicio.component';
-import { ItensCreateComponent } from './../features/itens/itens-create/itens-create.component';
-import { ItensUpdateComponent } from './../features/itens/itens-update/itens-update.component';
-import { ItensReadComponent } from './../features/itens/itens-read/itens-read.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {FormsModule} from '@angular/forms'
+
+
+
 
 
 
@@ -30,9 +30,6 @@ import {FormsModule} from '@angular/forms'
     NavbarComponent,
     InicioComponent,
 
-    ItensReadComponent,
-    ItensCreateComponent,
-    ItensUpdateComponent,
 
 
   ],

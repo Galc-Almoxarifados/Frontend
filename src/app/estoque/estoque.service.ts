@@ -1,3 +1,4 @@
+
 import { Item } from './item';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -31,5 +32,6 @@ export class EstoqueService {
   delete(id:any){
     return this.httpClient.delete(this.apiUrl + '/'+ id);
   }
+
   }
 

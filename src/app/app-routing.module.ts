@@ -1,4 +1,4 @@
-import { ItensComponent } from './itens/itens.component';
+import { ItensComponent } from "src/app/itens/ItensComponent";
 
 
 import { NgModule } from '@angular/core';

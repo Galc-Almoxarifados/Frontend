@@ -17,13 +17,14 @@ import { EstoqueComponent } from './estoque/estoque.component';
 import {FormsModule} from '@angular/forms';
 import { ManutencaoComponent } from './manutencao/manutencao.component';
 import { PedidoComponent } from './pedido/pedido.component';
-import { ItensComponent } from './itens/itens.component';
+import { ItensComponent } from "./itens/ItensComponent";
+
 import { PedidosProfessorComponent } from './pedidos-professor/pedidos-professor.component';
 import {HttpClientModule} from "@angular/common/http";
+import { CommonModule } from '@angular/common'
 
 
-// import { ItensReadComponent } from './components/itens/itens-read/itens-read.component';
-// import { ItensUpdateComponent } from './components/itens/itens-update/itens-update.component';
+
 
 
 @NgModule({
@@ -33,8 +34,8 @@ import {HttpClientModule} from "@angular/common/http";
     EstoqueComponent,
     ManutencaoComponent,
     PedidoComponent,
-    ItensComponent,
     PedidosProfessorComponent,
+    ItensComponent,
 
   ],
   imports: [
@@ -46,7 +47,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatButtonModule,
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
