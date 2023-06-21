@@ -1,21 +1,39 @@
-<!-- <h1>Formulário de Pedido</h1>
 
-<form (ngSubmit)="submitPedido()">
-  <div>
-    <label for="professor">Professor:</label>
-    <input type="text" id="professor" [(ngModel)]="pedido.professor" name="professor" required>
-  </div>
-
-  <div>
-    <label for="materiais">Materiais:</label>
-    <textarea id="materiais" [(ngModel)]="pedido.materiais" name="materiais" required></textarea>
-  </div>
-
-  <button type="submit">Enviar Pedido</button>
-</form> -->
 
 <h1>Recebimento de Pedido</h1>
 
+
+<h1>Estoque</h1>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>id Item</th>
+      <th>Quantidade</th>
+      <th>Data Retirada </th>
+      <th>data Devolucao</th>
+      <!-- <th>Detalhes</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pedido of pedido">
+      <td>{{ pedido.idAgendamento }}</td>
+      <td>{{ pedido.idItem }}</td>
+      <td>{{pedido.qtAgendamento}}</td>
+      <td>{{pedido.mtRetirada}}</td>
+      <td>{{pedido.mtDevolucao}}</td>
+      <td>
+        <!-- <button (click)="editarProduto(produto)">
+          <i class="material-icons"> edit </i>
+        </button>
+        <button (click)="removerProduto(produto)">
+          <i class="material-icons"> delete </i>
+        </button> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--
 <div class="pedido-info">
   <h2>Informações do Pedido</h2>
   <p>Professor: {{ pedido.cliente }}</p>
@@ -56,4 +74,4 @@
     </div>
     <button type="submit">Receber Pedido</button>
   </form>
-</div>
+</div> -->

@@ -1,11 +1,10 @@
+import { Itens } from './../../../Front-TCC-atualizado/src/app/shared/itens/itens.model';
+import { PedidosProfessorService } from './pedidos-professor.service';
+import { Pedido } from './../../../Front-TCC-atualizado/src/app/pedido/pedido.model';
 import { Component } from '@angular/core';
+import { PedidoProfessor } from './pedidosProfessor';
 
-interface ItemPedido {
-  nome: string;
-  quantidade?: number | null;
-  dataEntrega: string | null;
-  dataDevolucao: string | null;
-}
+
 
 @Component({
   selector: 'app-pedidos-professor',
@@ -13,27 +12,44 @@ interface ItemPedido {
   styleUrls: ['./pedidos-professor.component.css']
 })
 export class PedidosProfessorComponent {
-  itensPedido: ItemPedido[] = [{ nome: '', quantidade: null, dataEntrega: null, dataDevolucao: null }];
+  Pedido: PedidoProfessor[] = [];
   pedidoEnviado: boolean = false;
+  novoPedido: PedidoProfessor = {};
+  apiUrl = "/api/Agendamento"
 
-  adicionarItem() {
-    this.itensPedido.push({ nome: '', quantidade: null, dataEntrega: null, dataDevolucao: null });
+  constructor(private pedidosProfessorService: PedidosProfessorService) {
+
+  //  this.submitPedido()
+    }
+
+  // adicionarItem(){
+  //   this.itensPedido.push()
+  // }
+
+  adicionarPedido() {
+    this.pedidosProfessorService.save(this.novoPedido).subscribe({
+      next: (response) => {
+        // this.submitPedido()
+        this.novoPedido = {};
+      }
+    })
+
   }
 
-  removerItem(index: number) {
-    this.itensPedido.splice(index, 1);
-  }
+  // removerItem(index: number) {
+  //   this.itensPedido.splice(index, 1);
+  // }
 
-  submitPedido() {
-    // Aqui você pode adicionar a lógica para enviar o pedido para o backend
-    console.log('Itens do Pedido:', this.itensPedido);
-    // Limpar os campos após o envio
-    this.itensPedido = [{ nome: '', quantidade: null, dataEntrega: null, dataDevolucao: null }];
-    // Exibir mensagem de pedido enviado
-    this.pedidoEnviado = true;
-    // Após 10 segundos, limpar a mensagem
-    setTimeout(() => {
-      this.pedidoEnviado = false;
-    }, 5000);
-  }
+  // submitPedido() {
+  //   //Aqui você pode adicionar a lógica para enviar o pedido para o backend
+  //   console.log('Itens do Pedido:', this.novoPedido);
+  //   //Limpar os campos após o envio
+  //   this.novoPedido = [];
+  //   // mensagem de pedido enviado
+  //   this.pedidoEnviado = true;
+  //   //Após 5 segundos, limpar a mensagem
+  //   setTimeout(() => {
+  //     this.pedidoEnviado = false;
+  //   }, 5000);
+  // }
 }

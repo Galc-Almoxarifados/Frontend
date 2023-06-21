@@ -1,5 +1,10 @@
+import { PedidoProfessor } from './../pedidos-professor/pedidosProfessor';
+import { Pedido } from './../../../Front-TCC-atualizado/src/app/pedido/pedido.model';
+import { PedidoService } from './pedido.service';
+
 import { Component } from '@angular/core';
-import { Pedido } from './pedido.model';
+import { PedidosProfessorService } from '../pedidos-professor/pedidos-professor.service';
+
 
 @Component({
   selector: 'app-pedido',
@@ -7,19 +12,27 @@ import { Pedido } from './pedido.model';
   styleUrls: ['./pedido.component.css']
 })
 export class PedidoComponent {
-  pedido: any = {
-    cliente: 'João Silva',
-    data: new Date(),
-    quantidade: 5,
-    itens: [
-      { produto: 'Produto 1', quantidade: 2,  },
-      { produto: 'Produto 2', quantidade: 3,  },
-      { produto: 'Produto 3', quantidade: 1,  }
-    ]
-  };
-
+  pedido: PedidoProfessor [] = [];
+  apiUrl = "/api/Agendamento"
   quantidadeRecebida: number = 0;
   observacoes: string = '';
+
+
+
+  constructor(private pedidoService: PedidoService ) {
+    this.listarAgendamento();
+  }
+
+  listarAgendamento() {
+    this.pedidoService.getAll().subscribe({
+      next: (response) => {
+        this.pedido = []
+        response.forEach(element => {
+          this.pedido.push(element);
+        });
+      }
+    })
+  }
 
   receberPedido() {
     // Lógica para receber o pedido e registrar a quantidade recebida e as observações
