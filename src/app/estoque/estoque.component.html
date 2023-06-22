@@ -1,4 +1,6 @@
 <h1>Estoque</h1>
+
+<!-- <input type="text" [(ngModel)]="filtro" placeholder="Filtrar por nome"> -->
 <table>
   <thead>
     <tr>
@@ -14,14 +16,14 @@
     <tr *ngFor="let produto of produtos">
       <td>{{ produto.nome }}</td>
       <td>{{ produto.qtItens }}</td>
-      <td>{{produto.idAlmoxarife}}</td>
-      <td>{{produto.idStatusItem}}</td>
-      <td>{{produto.idTipodeItem}}</td>
+      <td>{{ obterNomeAlmoxarife(produto.idAlmoxarife) }}</td>
+      <td [ngClass]="obterClasseStatusItem(produto.idStatusItem)">{{ obterNomeStatusItem(produto.idStatusItem) }}</td>
+      <td [ngClass]="obterClasseTipoItem(produto.idTipodeItem)">{{ obterNomeTipoItem(produto.idTipodeItem) }}</td>
       <td>
-        <button (click)="editarProduto(produto)">
+              <button (click)="editarProduto(produto)" style="color: blue;">
           <i class="material-icons"> edit </i>
         </button>
-        <button (click)="removerProduto(produto)">
+        <button (click)="removerProduto(produto)" style="color: red;">
           <i class="material-icons"> delete </i>
         </button>
       </td>
@@ -29,11 +31,88 @@
   </tbody>
 </table>
 
+
+
+<div class="container">
+  <div class="table-container idAlmoxarife">
+    <table class="legendaAlmoxarife">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Almoxarife</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Luiz</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Rodrigo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-container Status">
+    <table class="legendaStatus">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Status Item</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td class="highlight-green">Disponível</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td class="highlight-red">Indisponível</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-container Tipo">
+    <table class="legendaTipo">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Tipo Item</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td class="highlight-green">Consumível</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td class="highlight-red">Não Consumível</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="edit-form" *ngIf="modoEdicao">
   <h2>Editar Produto</h2>
   <form (ngSubmit)="atualizarProduto()" #produtoForm="ngForm">
 
-    
+
 
     <label for="nome">Nome:</label>
     <input
@@ -110,7 +189,7 @@
 
 
 
-    <label for="almoxarife">Almoxarife:</label>
+    <label for="almoxarife">Id do Almoxarife:</label>
     <input
       id="almoxarife"
       type="number"
@@ -119,7 +198,7 @@
       required
     />
 
-    <label for="status">Status:</label>
+    <label for="status">Id do Status:</label>
     <input
       id="status"
       type="number"
@@ -128,7 +207,7 @@
       required
     />
 
-    <label for="tipoItem">Tipo do Item:</label>
+    <label for="tipoItem">Id Tipo do Item:</label>
     <input
       id="tipoItem"
       type="number"

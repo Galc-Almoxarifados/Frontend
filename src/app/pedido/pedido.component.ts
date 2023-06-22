@@ -1,9 +1,9 @@
 import { PedidoProfessor } from './../pedidos-professor/pedidosProfessor';
-import { Pedido } from './../../../Front-TCC-atualizado/src/app/pedido/pedido.model';
+
 import { PedidoService } from './pedido.service';
 
 import { Component } from '@angular/core';
-import { PedidosProfessorService } from '../pedidos-professor/pedidos-professor.service';
+
 
 
 @Component({

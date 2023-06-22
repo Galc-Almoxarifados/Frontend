@@ -1,7 +1,9 @@
 
 import { Component } from '@angular/core';
-import { ItensService } from './itens.service';
+
 import { Itens } from './itens';
+import { ItensService } from './itens.service';
+
 
 @Component({
   selector: 'app-itens',
@@ -26,5 +28,19 @@ export class ItensComponent  {
       }
     })
   }
-}
 
+   obterNomeAlmoxarife(id: number | undefined): string {
+    if (id === undefined) {
+      return "Desconhecido";
+    }
+
+    // Lógica de mapeamento do ID do almoxarife para o nome correspondente
+    if (id === 1) {
+      return "Luiz";
+    } else if (id === 2) {
+      return "Maria";
+    } else {
+      return "Desconhecido";
+    }
+  }
+}

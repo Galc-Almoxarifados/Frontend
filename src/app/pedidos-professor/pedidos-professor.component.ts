@@ -1,6 +1,6 @@
-import { Itens } from './../../../Front-TCC-atualizado/src/app/shared/itens/itens.model';
+
 import { PedidosProfessorService } from './pedidos-professor.service';
-import { Pedido } from './../../../Front-TCC-atualizado/src/app/pedido/pedido.model';
+
 import { Component } from '@angular/core';
 import { PedidoProfessor } from './pedidosProfessor';
 

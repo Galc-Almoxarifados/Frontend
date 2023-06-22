@@ -6,16 +6,16 @@
       <th>Quantidade</th>
       <th>Almoxarife</th>
       <th>Status</th>
-      <th>tipo do Itens</th>
+      <th>Tipo do Item</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let produto of itens">
       <td>{{ produto.nome }}</td>
       <td>{{ produto.qtItens }}</td>
-      <td>{{produto.idAlmoxarife}}</td>
-      <td>{{produto.idStatusItem}}</td>
-      <td>{{produto.idTipodeItem}}</td>
+      <td>{{ produto.idAlmoxarife === 1 ? 'Luiz' : produto.idAlmoxarife === 2 ? 'Rodrigo' : '' }}</td>
+      <td>{{ produto.idStatusItem === 1 ? 'Disponível': produto.idStatusItem === 2 ? 'Indisponível' : '' }}</td>
+      <td>{{ produto.idTipodeItem === 1 ? 'Consumivel' : produto.idTipodeItem === 2 ? 'Nao Consumivel' : ''}}</td>
     </tr>
   </tbody>
 </table>

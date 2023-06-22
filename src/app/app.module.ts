@@ -21,7 +21,12 @@ import { ItensComponent } from "./itens/ItensComponent";
 
 import { PedidosProfessorComponent } from './pedidos-professor/pedidos-professor.component';
 import {HttpClientModule} from "@angular/common/http";
-import { CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common';
+import { EstoquePipe } from './estoque/estoque.pipe';
+import { MatSnackBarModule } from '@angular/material/snack-bar';;
+
+
+
 
 
 
@@ -36,6 +41,8 @@ import { CommonModule } from '@angular/common'
     PedidoComponent,
     PedidosProfessorComponent,
     ItensComponent,
+    EstoquePipe,
+
 
   ],
   imports: [
@@ -49,6 +56,9 @@ import { CommonModule } from '@angular/common'
     FormsModule,
     HttpClientModule,
     CommonModule,
+    MatSnackBarModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

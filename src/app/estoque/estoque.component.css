@@ -192,4 +192,106 @@ tr:nth-child(even) {
   background-color: #0056b3;
 }
 
+.container {
+  display: flex;
+  gap: 20px;
+}
+
+.container .table-container {
+  width: 33.33%;
+}
+
+.container .table-container table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.container .table-container th,
+.container .table-container td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.container .table-container th {
+  background-color: #f2f2f2;
+}
+
+.container .table-container .highlight-green {
+  color: #00cc00;
+}
+
+.container .table-container .highlight-red {
+  color: #ff0000;
+}
+
+.custom-snackbar {
+  color: white;
+  background-color: green;
+  font-size: 20px;
+  text-align: center;
+}
+  /* Estilos para a tabela */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+    color: #333333;
+    text-transform: uppercase;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tbody tr:hover {
+    background-color: #e3e3e3;
+  }
+
+  /* Estilos para o cabeçalho */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333333;
+  }
+
+  .disponivel {
+    color: green;
+  }
+
+  .indisponivel {
+    color: red;
+  }
+
+  .desconhecido {
+    color: black; /* Ou qualquer outra cor padrão que você desejar */
+  }
+
+  .tipo1 {
+    color: green;
+  }
+
+  .tipo2 {
+    color: red;
+  }
+
+  .desconhecido {
+    color: black; /* Ou qualquer outra cor padrão que você desejar */
+  }
+
+
 
