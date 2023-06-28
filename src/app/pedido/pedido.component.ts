@@ -34,6 +34,19 @@ export class PedidoComponent {
     })
   }
 
+novaData(data: Date | undefined) {
+  if (data === undefined){
+    return "Sem Data"
+  }
+  var novaData = data.toLocaleString()
+  var Tsplit = novaData.split("T", 1)
+  var novasemTData = Tsplit.toLocaleString()
+  var dataSplited = novasemTData.split("-", 3)
+  var dataJoined = dataSplited.reverse().join('/')
+
+  return (dataJoined)
+}
+
   receberPedido() {
     // Lógica para receber o pedido e registrar a quantidade recebida e as observações
     console.log('Pedido recebido. Quantidade recebida:', this.quantidadeRecebida);

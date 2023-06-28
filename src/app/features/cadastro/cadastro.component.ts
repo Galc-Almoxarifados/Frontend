@@ -1,5 +1,7 @@
+import { CadastroService } from './cadastro.service';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Cadastro } from './cadastro';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,8 +14,11 @@ export class CadastroComponent {
   confirmPassword!: string;
   error!: string;
   successMessage!: string;
+  novoCadastro : Cadastro = {};
+  apiUrl = "/api/Utilizadores"
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private cadastroservice: CadastroService) { }
 
   register(): void {
     if (this.password !== this.confirmPassword) {
@@ -29,5 +34,14 @@ export class CadastroComponent {
 
     // Redirecting to the login page
     this.router.navigate(['/login']);
+  }
+
+  adicionarCadastro(){
+    this.cadastroservice.save(this.novoCadastro).subscribe({
+      next: (response) => {
+        this.novoCadastro = {};
+      }
+      
+    })
   }
 }

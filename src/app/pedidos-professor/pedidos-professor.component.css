@@ -152,7 +152,7 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  
+
 }
 .add-form input[type="date"] {
   width: 100%;
@@ -177,3 +177,11 @@ input[type="number"] {
 .add-form button[type="submit"]:hover {
   background-color: #45a049;
 }
+.success-message {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+

@@ -1,9 +1,8 @@
 export interface PedidoProfessor{
 idAgendamento?: number,
-idStatusAgendamento?: number,
-idItem?: number,
+nomeItem?: String,
 qtAgendamento?: number,
 mtAgendamento?: Date,
 mtRetirada?: Date,
-mtDevolucao?: Date
+mtDevolucao?: Date,
 }

@@ -18,18 +18,18 @@ export class LoginComponent {
   constructor(private router: Router) { }
   login(): void {
     const users = [
-      { username: 'luiz', password: '123456' },
-      { username: 'Marion', password: '123456' },
+      { username: 'luiz@etec.com', password: '123456' },
+      { username: 'marion@etec.com', password: '123456' },
     ];
 
     const user = users.find(user => user.username === this.username);
 
     if (user) {
       if (user.password === this.password) {
-        if (user.username === 'luiz') {
+        if (user.username === 'luiz@etec.com') {
           this.router.navigate(['/home/inicio']);
-        } else if (user.username === 'Rodrigo') {
-          window.location.href = 'http://localhost:8080';
+        } else if (user.username === 'marion@etec.com') {
+          window.location.href = ' http://localhost:60656/home/inicio';
         }
       } else {
         this.error = 'Senha inválida. Por favor, tente novamente.';

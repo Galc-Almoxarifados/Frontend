@@ -23,7 +23,8 @@ import { PedidosProfessorComponent } from './pedidos-professor/pedidos-professor
 import {HttpClientModule} from "@angular/common/http";
 import { CommonModule } from '@angular/common';
 import { EstoquePipe } from './estoque/estoque.pipe';
-import { MatSnackBarModule } from '@angular/material/snack-bar';;
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ReceberPedidoComponent } from './receber-pedido/receber-pedido.component';;
 
 
 
@@ -42,6 +43,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';;
     PedidosProfessorComponent,
     ItensComponent,
     EstoquePipe,
+    ReceberPedidoComponent,
 
 
   ],

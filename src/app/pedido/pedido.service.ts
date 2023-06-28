@@ -15,6 +15,6 @@ export class PedidoService {
 
 
    getAll(){
-    return this.httpClient.get<PedidoProfessor[]>(this.apiUrl + '/GetAllAgendamento');
+    return this.httpClient.get<PedidoProfessor[]>(this.apiUrl + '/GetAllAgendamentos');
   }
 }

@@ -14,8 +14,11 @@
       <td>{{ produto.nome }}</td>
       <td>{{ produto.qtItens }}</td>
       <td>{{ produto.idAlmoxarife === 1 ? 'Luiz' : produto.idAlmoxarife === 2 ? 'Rodrigo' : '' }}</td>
-      <td>{{ produto.idStatusItem === 1 ? 'Disponível': produto.idStatusItem === 2 ? 'Indisponível' : '' }}</td>
-      <td>{{ produto.idTipodeItem === 1 ? 'Consumivel' : produto.idTipodeItem === 2 ? 'Nao Consumivel' : ''}}</td>
+      <td [ngStyle]="{'color': produto.idStatusItem === 1 ? 'green' : produto.idStatusItem === 2 ? 'red' : ''}">
+        {{ produto.idStatusItem === 1 ? 'Disponível' : produto.idStatusItem === 2 ? 'Indisponível' : '' }}
+      </td>
+      <td  [ngStyle]="{'color': produto.idTipodeItem === 1 ? 'green' : produto.idTipodeItem === 2 ? 'red' : ''}">
+        {{ produto.idTipodeItem === 1 ? 'Consumível' : produto.idTipodeItem === 2 ? 'Não Consumível' : '' }}</td>
     </tr>
   </tbody>
 </table>

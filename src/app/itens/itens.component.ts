@@ -38,7 +38,7 @@ export class ItensComponent  {
     if (id === 1) {
       return "Luiz";
     } else if (id === 2) {
-      return "Maria";
+      return "Rodrigo";
     } else {
       return "Desconhecido";
     }

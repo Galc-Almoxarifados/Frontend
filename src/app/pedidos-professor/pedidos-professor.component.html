@@ -1,33 +1,21 @@
-<h2>Fazer Pedido de Item de Almoxarifado</h2>
+<h2>Fazer Pedido</h2>
 
 <div class="add-form">
   <h2>Adicionar Pedido</h2>
-  <form (ngSubmit)="adicionarPedido()" #produtoForm="ngForm">
+  <form (ngSubmit)="adicionarPedido();   pedidoEnviadoMensagem()" #produtoForm="ngForm">
 
 
-    <label for="nome">IdStatusAgendagemnto:</label>
+    <label for="status">Nome do item</label>
     <input
-      id="id"
-      type="number"
-      [(ngModel)]="novoPedido.idStatusAgendamento"
-      name="nome"
+      id="qtAgendamento"
+      type="text"
+      [(ngModel)]="novoPedido.nomeItem  "
+      name="qtAgendamento"
       required
     />
 
 
-
-
-
-    <label for="almoxarife">idItem:</label>
-    <input
-      id="idItem"
-      type="number"
-      [(ngModel)]="novoPedido.idItem"
-      name="idItem"
-      required
-    />
-
-    <label for="status">qtAgendamento:</label>
+    <label for="status">quantidade</label>
     <input
       id="qtAgendamento"
       type="number"
@@ -54,69 +42,10 @@
       name="mtDevolucao"
       required
     />
-
-      <!-- <label for="dataDevolucao">Data de Devolução:</label>
-      <input type="date" id="dataDevolucao" [(ngModel)]="novoPedido.mtDevolucao" name="dataDevolucao" required> -->
-
-
-      <!-- <button class="enviar-pedido" (click)="submitPedido()">Enviar Pedido</button> -->
-
-
       <button type="submit">Adicionar</button>
   </form>
-  <!-- <div *ngIf="pedidoEnviado" class="mensagem">
-    Pedido enviado com sucesso!
-  </div> -->
-
-<!-- <div class="pedido-item" *ngFor="let item of itensPedido; let i = index">
-  <div class="campo">
-    <label for="nomeItem{{i}}">Nome do Item:</label>
-    <input type="text" id="nomeItem{{i}}" [(ngModel)]="itensPedido[i].nome" name="nomeItem{{i}}" required>
-  </div>
-
-  <div class="campo">
-    <label for="quantidade{{i}}">Quantidade:</label>
-    <input type="number" id="quantidade{{i}}" [(ngModel)]="itensPedido[i].quantidade" name="quantidade{{i}}" required>
-  </div>
-
-  <div class="campo">
-
-    <label for="quantidade{{i}}">id status Agendamento:</label>
-    <input type="number" id="quantidade{{i}}" [(ngModel)]="itensPedido.id" name="quantidade{{i}}" required>
-  </div>
-
-  <div class="campo">
-    <label for="quantidade{{i}}">Quantidade:</label>
-    <input type="number" id="quantidade{{i}}" [(ngModel)]="itensPedido[i].quantidade" name="quantidade{{i}}" required>
-  </div>
-
-  <div class="campo">
-    <label for="quantidade{{i}}">Quantidade:</label>
-    <input type="number" id="quantidade{{i}}" [(ngModel)]="itensPedido[i].quantidade" name="quantidade{{i}}" required>
-  </div>
-
-  <div class="campo">
-    <label for="quantidade{{i}}">Quantidade:</label>
-    <input type="number" id="quantidade{{i}}" [(ngModel)]="itensPedido[i].quantidade" name="quantidade{{i}}" required>
-  </div>
-
-  <div class="campo">
-    <label for="dataEntrega{{i}}">Data de Entrega:</label>
-    <input type="date" id="dataEntrega{{i}}" [(ngModel)]="itensPedido[i].dataEntrega" name="dataEntrega{{i}}" required>
-  </div>
-
-  <div class="campo">
-    <label for="dataDevolucao{{i}}">Data de Devolução:</label>
-    <input type="date" id="dataDevolucao{{i}}" [(ngModel)]="itensPedido[i].dataDevolucao" name="dataDevolucao{{i}}" required>
-  </div> -->
-
-  <!-- <button class="remover-item" (click)="removerItem(i)">Remover Item</button> -->
-<!-- </div> -->
-
-<!-- <button class="adicionar-item" (click)="adicionarPedido()">Adicionar um Novo Item</button> -->
-
-<!-- <button class="enviar-pedido" (click)="submitPedido()">Enviar Pedido</button> -->
-
-<!-- <div *ngIf="pedidoEnviado" class="mensagem">
-  Pedido enviado com sucesso! -->
 </div>
+<div *ngIf="pedidoEnviadoFlag" class="success-message">
+  Pedido enviado com sucesso!
+</div>
+

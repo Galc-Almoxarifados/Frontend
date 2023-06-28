@@ -1,3 +1,4 @@
+import { ReceberPedidoComponent } from './../../receber-pedido/receber-pedido.component';
 import { PedidosProfessorComponent } from './../../pedidos-professor/pedidos-professor.component';
 import { ItensComponent } from "./../../itens/ItensComponent";
 import { PedidoComponent } from './../../pedido/pedido.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path: 'professor',
         component: PedidosProfessorComponent
+      },
+      {
+        path: 'recebimentoPedido',
+        component: ReceberPedidoComponent
       }
 
     ]
